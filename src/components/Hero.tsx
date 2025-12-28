@@ -17,8 +17,9 @@ const Hero = ({ onOpenChat }: HeroProps) => {
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           {/* Photo */}
           <div className="relative group">
-            <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-full blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500" />
-            <div className="relative w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-primary/30 animate-float">
+            <div className="absolute -inset-4 bg-gradient-to-r from-primary via-accent to-primary rounded-2xl blur-2xl opacity-40 group-hover:opacity-60 transition-opacity duration-500 animate-pulse" />
+            <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-xl opacity-70 blur-sm" />
+            <div className="relative w-64 h-80 lg:w-72 lg:h-96 rounded-xl overflow-hidden border-2 border-primary/40 shadow-[0_0_40px_rgba(139,92,246,0.3)] animate-float">
               <img 
                 src={prathapPhoto} 
                 alt="Prathap - Software Developer" 
