@@ -6,20 +6,20 @@ const Contact = () => {
     {
       name: "Email",
       icon: Mail,
-      href: "mailto:prathap@example.com",
-      label: "prathap@example.com"
+      href: "mailto:prathapcse78@gmail.com",
+      label: "prathapcse78@gmail.com"
     },
     {
       name: "LinkedIn",
       icon: Linkedin,
-      href: "https://linkedin.com/in/prathap",
-      label: "linkedin.com/in/prathap"
+      href: "https://www.linkedin.com/in/prathap-t-57134130a",
+      label: "linkedin.com/in/prathap-t"
     },
     {
       name: "GitHub",
       icon: Github,
       href: "https://github.com/prathap",
-      label: "github.com/prathap"
+      label: "GitHub Dashboard"
     }
   ];
 
@@ -63,7 +63,7 @@ const Contact = () => {
             
             <div className="text-center">
               <Button variant="hero" size="lg" asChild>
-                <a href="#" download>
+                <a href="/Prathap_Resume.pdf" download="Prathap_Resume.pdf">
                   <Download className="mr-2" /> Download Resume
                 </a>
               </Button>

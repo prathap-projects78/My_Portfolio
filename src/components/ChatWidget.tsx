@@ -14,76 +14,102 @@ interface ChatWidgetProps {
 
 // Knowledge base for RAG simulation
 const knowledgeBase = {
-  name: "Prathap",
-  education: "B.E. in Computer Science & Engineering, graduating 2027",
+  name: "Prathap T",
+  phone: "7603892716",
+  email: "prathapcse78@gmail.com",
+  linkedin: "https://www.linkedin.com/in/prathap-t-57134130a",
+  education: {
+    degree: "B.E. Computer Science and Engineering",
+    college: "Annai Mira College of Engineering and Technology",
+    year: "2023–2027 (Pursuing)",
+    hsc: "Bharathidasanar Matric Higher Secondary School - 90% (2023)",
+    sslc: "Bharathidasanar Matric Higher Secondary School - Pass (2021)"
+  },
   skills: {
-    frontend: ["HTML", "CSS", "JavaScript", "React", "Tailwind CSS"],
-    backend: ["Node.js", "Express", "SQL", "MongoDB"],
-    aiml: ["RAG Systems", "LLM Integration", "Embeddings", "Vector Databases"],
-    tools: ["Git", "GitHub", "Figma", "VS Code", "Postman"]
+    languages: ["Python", "Java"],
+    frontend: ["HTML", "CSS", "JavaScript"],
+    database: ["SQL"],
+    other: ["UI/UX Design", "Ethical Hacking (Basics)"]
   },
   projects: [
-    { name: "Calculator Web App", tech: ["HTML", "CSS", "JavaScript"], description: "A fully functional calculator with modern UI" },
-    { name: "Cricket Scoreboard", tech: ["React", "JavaScript", "CSS"], description: "Real-time cricket match tracking application" },
-    { name: "RAG-based Applications", tech: ["Python", "LangChain", "Vector DB", "LLM"], description: "Intelligent chatbots using RAG architecture" }
+    { name: "Online Portfolio Website", tech: ["HTML", "CSS", "JavaScript"], description: "Personal portfolio website with responsive design and modern UI/UX principles" }
   ],
-  careerGoals: "Full Stack Development and AI/ML Applications",
+  certifications: [
+    "UI/UX Design – Udemy",
+    "Python Full Stack Development – Udemy",
+    "Generative AI Powered Data Analytics (Job Simulation) – Forage"
+  ],
+  languages: ["Tamil (Fluent)", "English (Proficient)"],
+  careerObjective: "To obtain a challenging position in the field of Computer Science where I can apply my technical and analytical skills for continuous learning and growth, while contributing to the success of the organization.",
   tagline: "CSE Student | Web Developer | AI Enthusiast",
-  about: "A passionate Computer Science student with keen interest in web development and artificial intelligence."
+  about: "A passionate Computer Science student pursuing B.E. at Annai Mira College of Engineering and Technology with keen interest in web development, UI/UX design, and artificial intelligence."
 };
 
 const findAnswer = (query: string): string => {
   const q = query.toLowerCase();
   
   if (q.includes("name") || q.includes("who are you") || q.includes("who is prathap")) {
-    return `Prathap is a ${knowledgeBase.tagline}. ${knowledgeBase.about}`;
+    return `Prathap T is a ${knowledgeBase.tagline}. ${knowledgeBase.about}`;
   }
   
   if (q.includes("education") || q.includes("study") || q.includes("degree") || q.includes("college") || q.includes("university")) {
-    return `Prathap is pursuing a ${knowledgeBase.education}. He is focused on building a strong foundation in computer science fundamentals and modern development practices.`;
+    const { education } = knowledgeBase;
+    return `**Education:**\n\n• **${education.degree}** at ${education.college} (${education.year})\n• **HSC:** ${education.hsc}\n• **SSLC:** ${education.sslc}`;
   }
   
   if (q.includes("skill") || q.includes("technology") || q.includes("tech stack") || q.includes("know")) {
     const { skills } = knowledgeBase;
-    return `Prathap has expertise in multiple areas:\n\n**Frontend:** ${skills.frontend.join(", ")}\n\n**Backend:** ${skills.backend.join(", ")}\n\n**AI/ML:** ${skills.aiml.join(", ")}\n\n**Tools:** ${skills.tools.join(", ")}`;
+    return `Prathap has expertise in:\n\n**Languages:** ${skills.languages.join(", ")}\n\n**Frontend:** ${skills.frontend.join(", ")}\n\n**Database:** ${skills.database.join(", ")}\n\n**Other:** ${skills.other.join(", ")}`;
   }
   
   if (q.includes("project") || q.includes("built") || q.includes("created") || q.includes("work")) {
     const projectList = knowledgeBase.projects.map(p => 
       `• **${p.name}**: ${p.description} (Built with ${p.tech.join(", ")})`
     ).join("\n\n");
-    return `Here are Prathap's notable projects:\n\n${projectList}`;
+    return `Here are Prathap's projects:\n\n${projectList}`;
   }
   
-  if (q.includes("goal") || q.includes("career") || q.includes("aspiration") || q.includes("future")) {
-    return `Prathap's career focus is on ${knowledgeBase.careerGoals}. He is passionate about building innovative solutions that combine modern web technologies with cutting-edge AI capabilities.`;
+  if (q.includes("certification") || q.includes("certificate") || q.includes("course")) {
+    return `**Certifications:**\n\n${knowledgeBase.certifications.map(c => `• ${c}`).join("\n")}`;
   }
   
-  if (q.includes("contact") || q.includes("reach") || q.includes("email") || q.includes("connect")) {
-    return "You can connect with Prathap through the Contact section on this portfolio. He's available via Email, LinkedIn, and GitHub. Feel free to reach out for opportunities or collaborations!";
+  if (q.includes("goal") || q.includes("career") || q.includes("aspiration") || q.includes("future") || q.includes("objective")) {
+    return `**Career Objective:**\n\n${knowledgeBase.careerObjective}`;
   }
   
-  if (q.includes("frontend") || q.includes("react") || q.includes("javascript")) {
-    return `In frontend development, Prathap is proficient in ${knowledgeBase.skills.frontend.join(", ")}. He enjoys creating modern, responsive user interfaces with clean code.`;
+  if (q.includes("contact") || q.includes("reach") || q.includes("email") || q.includes("connect") || q.includes("phone")) {
+    return `**Contact Information:**\n\n• **Phone:** ${knowledgeBase.phone}\n• **Email:** ${knowledgeBase.email}\n• **LinkedIn:** linkedin.com/in/prathap-t`;
   }
   
-  if (q.includes("backend") || q.includes("node") || q.includes("database") || q.includes("server")) {
-    return `For backend development, Prathap works with ${knowledgeBase.skills.backend.join(", ")}. He has experience building RESTful APIs and working with both SQL and NoSQL databases.`;
+  if (q.includes("frontend") || q.includes("html") || q.includes("css") || q.includes("javascript")) {
+    return `In frontend development, Prathap is proficient in ${knowledgeBase.skills.frontend.join(", ")}. He specializes in Full Stack Frontend development.`;
   }
   
-  if (q.includes("ai") || q.includes("ml") || q.includes("machine learning") || q.includes("artificial intelligence") || q.includes("rag") || q.includes("llm")) {
-    return `Prathap is exploring the exciting field of AI/ML, with a focus on ${knowledgeBase.skills.aiml.join(", ")}. He's particularly interested in building RAG-based applications that provide accurate, context-aware responses.`;
+  if (q.includes("backend") || q.includes("database") || q.includes("sql")) {
+    return `For database work, Prathap is skilled in ${knowledgeBase.skills.database.join(", ")}. He has experience with data management and queries.`;
+  }
+  
+  if (q.includes("language") && (q.includes("speak") || q.includes("known") || q.includes("fluent"))) {
+    return `**Languages Known:**\n\n${knowledgeBase.languages.map(l => `• ${l}`).join("\n")}`;
+  }
+  
+  if (q.includes("python") || q.includes("java")) {
+    return `Prathap is proficient in programming languages: ${knowledgeBase.skills.languages.join(" and ")}. He has completed Python Full Stack Development certification from Udemy.`;
+  }
+  
+  if (q.includes("ui") || q.includes("ux") || q.includes("design")) {
+    return `Prathap has skills in UI/UX Design and has completed a UI/UX Design certification from Udemy. He applies modern design principles in his projects.`;
   }
   
   if (q.includes("hello") || q.includes("hi") || q.includes("hey")) {
-    return `Hello! 👋 I'm Prathap Assistant, here to help you learn about Prathap. Feel free to ask me about his skills, projects, education, or career goals!`;
+    return `Hello! 👋 I'm Prathap Assistant, here to help you learn about Prathap T. Feel free to ask me about his skills, projects, education, certifications, or career goals!`;
   }
 
   if (q.includes("help") || q.includes("can you")) {
-    return `I can help you learn about Prathap! Try asking about:\n\n• His **skills** and technologies\n• His **projects** and work\n• His **education** background\n• His **career goals**\n• How to **contact** him`;
+    return `I can help you learn about Prathap! Try asking about:\n\n• His **skills** and technologies\n• His **projects** and work\n• His **education** background\n• His **certifications**\n• His **career goals**\n• How to **contact** him`;
   }
   
-  return "Sorry, I don't have specific information about that yet. Feel free to ask about Prathap's skills, projects, education, or career goals!";
+  return "Sorry, I don't have specific information about that yet. Feel free to ask about Prathap's skills, projects, education, certifications, or career goals!";
 };
 
 const ChatWidget = ({ isOpen, onClose }: ChatWidgetProps) => {
