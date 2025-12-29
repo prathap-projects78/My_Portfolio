@@ -54,73 +54,88 @@ const knowledgeBase = {
 const findAnswer = (query: string): string => {
   const q = query.toLowerCase();
   
-  if (q.includes("name") || q.includes("who are you") || q.includes("who is prathap")) {
-    return `**Prathap** is a ${knowledgeBase.tagline}. ${knowledgeBase.about}\n\n**Personal Details:**\n• **Father:** ${knowledgeBase.fatherName}\n• **Mother:** ${knowledgeBase.motherName}\n• **Date of Birth:** ${knowledgeBase.dateOfBirth}\n• **Age:** ${knowledgeBase.age} years`;
+  if (q.includes("name") && !q.includes("father") && !q.includes("mother") && !q.includes("parent")) {
+    return `Prathap T`;
   }
 
-  if (q.includes("father") || q.includes("dad") || q.includes("parent")) {
-    return `Prathap's father's name is **${knowledgeBase.fatherName}** and his mother's name is **${knowledgeBase.motherName}**.`;
+  if (q.includes("father") || q.includes("dad")) {
+    return `Thatchanamoorthy`;
   }
 
   if (q.includes("mother") || q.includes("mom")) {
-    return `Prathap's mother's name is **${knowledgeBase.motherName}**.`;
+    return `Gnanasoundhari`;
+  }
+
+  if (q.includes("parent")) {
+    return `Father: Thatchanamoorthy\nMother: Gnanasoundhari`;
   }
 
   if (q.includes("birth") || q.includes("dob") || q.includes("born") || q.includes("birthday")) {
-    return `Prathap was born on **${knowledgeBase.dateOfBirth}**. He is currently **${knowledgeBase.age} years old**.`;
+    return `07/12/2004`;
   }
 
   if (q.includes("age") || q.includes("old")) {
-    return `Prathap is **${knowledgeBase.age} years old** (Born: ${knowledgeBase.dateOfBirth}).`;
+    return `21 years old`;
   }
   
+  if (q.includes("who is") || q.includes("who are") || q.includes("about") || q.includes("tell me")) {
+    return `${knowledgeBase.tagline}`;
+  }
+
   if (q.includes("education") || q.includes("study") || q.includes("degree") || q.includes("college") || q.includes("university")) {
-    const { education } = knowledgeBase;
-    return `**Education:**\n\n• **${education.degree}** at ${education.college} (${education.year})\n• **HSC:** ${education.hsc}\n• **SSLC:** ${education.sslc}`;
+    return `B.E. Computer Science and Engineering at Annai Mira College of Engineering and Technology (2023–2027)`;
   }
   
-  if (q.includes("skill") || q.includes("technology") || q.includes("tech stack") || q.includes("know")) {
-    const { skills } = knowledgeBase;
-    return `Prathap has expertise in:\n\n**Languages:** ${skills.languages.join(", ")}\n\n**Frontend:** ${skills.frontend.join(", ")}\n\n**Database:** ${skills.database.join(", ")}\n\n**Other:** ${skills.other.join(", ")}`;
+  if (q.includes("skill") || q.includes("technology") || q.includes("tech stack")) {
+    return `Python, Java, HTML, CSS, JavaScript, SQL, UI/UX Design`;
   }
   
   if (q.includes("project") || q.includes("built") || q.includes("created") || q.includes("work")) {
-    const projectList = knowledgeBase.projects.map(p => 
-      `• **${p.name}**: ${p.description} (Built with ${p.tech.join(", ")})`
-    ).join("\n\n");
-    return `Here are Prathap's projects:\n\n${projectList}`;
+    return `Code Mentor AI, Cricket Scoreboard, RAG-based Applications`;
   }
   
   if (q.includes("certification") || q.includes("certificate") || q.includes("course")) {
-    return `**Certifications:**\n\n${knowledgeBase.certifications.map(c => `• ${c}`).join("\n")}`;
+    return `UI/UX Design, Python Full Stack Development, Generative AI (Forage)`;
   }
   
   if (q.includes("goal") || q.includes("career") || q.includes("aspiration") || q.includes("future") || q.includes("objective")) {
-    return `**Career Objective:**\n\n${knowledgeBase.careerObjective}`;
+    return `To obtain a challenging position in Computer Science applying technical and analytical skills for continuous learning and growth.`;
   }
   
-  if (q.includes("contact") || q.includes("reach") || q.includes("email") || q.includes("connect") || q.includes("phone")) {
-    return `**Contact Information:**\n\n• **Phone:** ${knowledgeBase.phone}\n• **Email:** ${knowledgeBase.email}\n• **LinkedIn:** linkedin.com/in/prathap-t`;
+  if (q.includes("email")) {
+    return `prathapcse78@gmail.com`;
+  }
+
+  if (q.includes("phone") || q.includes("number") || q.includes("mobile")) {
+    return `7603892716`;
+  }
+
+  if (q.includes("contact") || q.includes("reach") || q.includes("connect")) {
+    return `Phone: 7603892716\nEmail: prathapcse78@gmail.com`;
+  }
+  
+  if (q.includes("linkedin")) {
+    return `linkedin.com/in/prathap-t-57134130a`;
   }
   
   if (q.includes("frontend") || q.includes("html") || q.includes("css") || q.includes("javascript")) {
-    return `In frontend development, Prathap is proficient in ${knowledgeBase.skills.frontend.join(", ")}. He specializes in Full Stack Frontend development.`;
+    return `HTML, CSS, JavaScript`;
   }
   
   if (q.includes("backend") || q.includes("database") || q.includes("sql")) {
-    return `For database work, Prathap is skilled in ${knowledgeBase.skills.database.join(", ")}. He has experience with data management and queries.`;
+    return `SQL`;
   }
   
   if (q.includes("language") && (q.includes("speak") || q.includes("known") || q.includes("fluent"))) {
-    return `**Languages Known:**\n\n${knowledgeBase.languages.map(l => `• ${l}`).join("\n")}`;
+    return `Tamil (Fluent), English (Proficient)`;
   }
   
   if (q.includes("python") || q.includes("java")) {
-    return `Prathap is proficient in programming languages: ${knowledgeBase.skills.languages.join(" and ")}. He has completed Python Full Stack Development certification from Udemy.`;
+    return `Python, Java`;
   }
   
   if (q.includes("ui") || q.includes("ux") || q.includes("design")) {
-    return `Prathap has skills in UI/UX Design and has completed a UI/UX Design certification from Udemy. He applies modern design principles in his projects.`;
+    return `UI/UX Design (Udemy Certified)`;
   }
   
   if (q.includes("hello") || q.includes("hi") || q.includes("hey")) {
