@@ -1,13 +1,13 @@
-import { ExternalLink, Github, Calculator, Trophy, Bot } from "lucide-react";
+import { ExternalLink, Github, Trophy, Bot, Code } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Projects = () => {
   const projects = [
     {
-      title: "Calculator Web App",
-      description: "A fully functional calculator with a clean, modern interface. Supports basic arithmetic operations with a responsive design that works on all devices.",
-      tech: ["HTML", "CSS", "JavaScript"],
-      icon: Calculator,
+      title: "Code Mentor AI",
+      description: "An intelligent AI-powered coding assistant that helps developers learn programming concepts, debug code, and get personalized mentorship through conversational AI.",
+      tech: ["Python", "LangChain", "OpenAI", "React"],
+      icon: Bot,
       color: "from-primary to-primary/60",
       demoLink: "#",
       githubLink: "#"
