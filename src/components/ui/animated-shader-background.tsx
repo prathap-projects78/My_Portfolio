@@ -81,7 +81,7 @@ const AnimatedShaderBackground = () => {
           }
 
           o = tanh(pow(o / 100.0, vec4(1.6)));
-          gl_FragColor = o * 1.5;
+          gl_FragColor = o * 0.4;
         }
       `
     });
