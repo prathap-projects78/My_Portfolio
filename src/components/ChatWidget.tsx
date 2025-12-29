@@ -154,7 +154,7 @@ const ChatWidget = ({ isOpen, onClose }: ChatWidgetProps) => {
 
   return (
     <div className="fixed bottom-6 right-6 z-50 w-[380px] max-w-[calc(100vw-3rem)] animate-slide-up">
-      <div className="glass-card overflow-hidden shadow-2xl">
+      <div className="bg-card border border-border rounded-xl overflow-hidden shadow-2xl">
         {/* Header */}
         <div className="bg-gradient-to-r from-primary to-accent p-4 flex items-center justify-between">
           <div className="flex items-center gap-3">

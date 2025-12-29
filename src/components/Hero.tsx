@@ -35,7 +35,7 @@ const Hero = ({ onOpenChat }: HeroProps) => {
             </div>
             
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-4 animate-slide-up">
-              Hi, I'm <span className="gradient-text">Prathap</span>
+              Hi, I'm <span className="gradient-text">Prathap T</span>
             </h1>
             
             <p className="text-xl md:text-2xl text-muted-foreground mb-6 animate-slide-up" style={{ animationDelay: '0.1s' }}>
