@@ -14,7 +14,11 @@ interface ChatWidgetProps {
 
 // Knowledge base for RAG simulation
 const knowledgeBase = {
-  name: "Prathap T",
+  name: "Prathap",
+  fatherName: "Thatchanamoorthy",
+  motherName: "Gnanasoundhari",
+  dateOfBirth: "07/12/2004",
+  age: 21,
   phone: "7603892716",
   email: "prathapcse78@gmail.com",
   linkedin: "https://www.linkedin.com/in/prathap-t-57134130a",
@@ -32,7 +36,9 @@ const knowledgeBase = {
     other: ["UI/UX Design", "Ethical Hacking (Basics)"]
   },
   projects: [
-    { name: "Online Portfolio Website", tech: ["HTML", "CSS", "JavaScript"], description: "Personal portfolio website with responsive design and modern UI/UX principles" }
+    { name: "Code Mentor AI", tech: ["Python", "LangChain", "OpenAI", "React"], description: "AI-powered coding assistant for learning programming and debugging" },
+    { name: "Cricket Scoreboard", tech: ["React", "JavaScript", "CSS"], description: "Real-time cricket scoreboard for tracking match scores" },
+    { name: "RAG-based Applications", tech: ["Python", "LangChain", "Vector DB", "LLM"], description: "Intelligent chatbots using Retrieval-Augmented Generation" }
   ],
   certifications: [
     "UI/UX Design – Udemy",
@@ -49,7 +55,23 @@ const findAnswer = (query: string): string => {
   const q = query.toLowerCase();
   
   if (q.includes("name") || q.includes("who are you") || q.includes("who is prathap")) {
-    return `Prathap T is a ${knowledgeBase.tagline}. ${knowledgeBase.about}`;
+    return `**Prathap** is a ${knowledgeBase.tagline}. ${knowledgeBase.about}\n\n**Personal Details:**\n• **Father:** ${knowledgeBase.fatherName}\n• **Mother:** ${knowledgeBase.motherName}\n• **Date of Birth:** ${knowledgeBase.dateOfBirth}\n• **Age:** ${knowledgeBase.age} years`;
+  }
+
+  if (q.includes("father") || q.includes("dad") || q.includes("parent")) {
+    return `Prathap's father's name is **${knowledgeBase.fatherName}** and his mother's name is **${knowledgeBase.motherName}**.`;
+  }
+
+  if (q.includes("mother") || q.includes("mom")) {
+    return `Prathap's mother's name is **${knowledgeBase.motherName}**.`;
+  }
+
+  if (q.includes("birth") || q.includes("dob") || q.includes("born") || q.includes("birthday")) {
+    return `Prathap was born on **${knowledgeBase.dateOfBirth}**. He is currently **${knowledgeBase.age} years old**.`;
+  }
+
+  if (q.includes("age") || q.includes("old")) {
+    return `Prathap is **${knowledgeBase.age} years old** (Born: ${knowledgeBase.dateOfBirth}).`;
   }
   
   if (q.includes("education") || q.includes("study") || q.includes("degree") || q.includes("college") || q.includes("university")) {
