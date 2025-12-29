@@ -8,12 +8,14 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import ChatWidget from "@/components/ChatWidget";
 import ChatButton from "@/components/ChatButton";
+import AnimatedShaderBackground from "@/components/ui/animated-shader-background";
 
 const Index = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      <AnimatedShaderBackground />
       <Navbar />
       <Hero onOpenChat={() => setIsChatOpen(true)} />
       <About />
