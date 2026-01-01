@@ -43,8 +43,7 @@ const Hero = ({ onOpenChat }: HeroProps) => {
             </p>
             
             <p className="text-muted-foreground text-lg mb-8 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-              Passionate about building modern web applications and exploring the frontiers of artificial intelligence. 
-              Currently pursuing B.E. in Computer Science.
+              AI + Web Aspiring software engineer interested in full-stack development and AI-driven applications. I enjoy turning ideas into practical solutions using modern technologies and continuous learning.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-slide-up" style={{ animationDelay: '0.3s' }}>
