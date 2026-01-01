@@ -22,7 +22,7 @@ const Projects = () => {
       image: cricketScoreboardImg,
       color: "from-accent to-accent/60",
       demoLink: "https://cricket-score-manage-kq3u.bolt.host/",
-      githubLink: "#"
+      githubLink: "https://github.com/prathap-projects78/My_Cricket_Scoreboard.git"
     },
     {
       title: "RAG-based Applications",
