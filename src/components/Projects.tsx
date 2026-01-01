@@ -46,7 +46,7 @@ const Projects = () => {
           <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full" />
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="flex flex-col gap-8 max-w-2xl mx-auto">
           {projects.map((project, index) => (
             <div 
               key={index}
