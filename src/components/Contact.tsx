@@ -18,8 +18,8 @@ const Contact = () => {
     {
       name: "GitHub",
       icon: Github,
-      href: "https://github.com/prathap",
-      label: "GitHub Dashboard"
+      href: "https://github.com/prathap-projects78",
+      label: "github.com/prathap-projects78"
     }
   ];
 
