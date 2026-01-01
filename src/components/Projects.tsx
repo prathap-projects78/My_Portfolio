@@ -1,5 +1,6 @@
-import { ExternalLink, Github, Trophy, Bot, Code } from "lucide-react";
+import { ExternalLink, Github, Bot } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import cricketScoreboardImg from "@/assets/cricket-scoreboard.png";
 
 const Projects = () => {
   const projects = [
@@ -8,6 +9,7 @@ const Projects = () => {
       description: "An intelligent AI-powered coding assistant that helps developers learn programming concepts, debug code, and get personalized mentorship through conversational AI.",
       tech: ["Python", "LangChain", "OpenAI", "React"],
       icon: Bot,
+      image: null,
       color: "from-primary to-primary/60",
       demoLink: "#",
       githubLink: "#"
@@ -16,9 +18,10 @@ const Projects = () => {
       title: "Cricket Scoreboard",
       description: "Real-time cricket scoreboard application for tracking match scores, player statistics, and game progress with an intuitive user interface.",
       tech: ["React", "JavaScript", "CSS"],
-      icon: Trophy,
+      icon: null,
+      image: cricketScoreboardImg,
       color: "from-accent to-accent/60",
-      demoLink: "#",
+      demoLink: "https://cricket-score-manage-kq3u.bolt.host/",
       githubLink: "#"
     },
     {
@@ -26,6 +29,7 @@ const Projects = () => {
       description: "Intelligent chatbot applications using Retrieval-Augmented Generation. Combines vector embeddings with LLMs to provide accurate, context-aware responses.",
       tech: ["Python", "LangChain", "Vector DB", "LLM"],
       icon: Bot,
+      image: null,
       color: "from-primary to-accent",
       demoLink: "#",
       githubLink: "#"
@@ -48,9 +52,17 @@ const Projects = () => {
               key={index}
               className="glass-card-hover overflow-hidden group"
             >
-              {/* Header with icon */}
+              {/* Header with icon or image */}
               <div className={`h-32 bg-gradient-to-br ${project.color} flex items-center justify-center relative overflow-hidden`}>
-                <project.icon className="w-16 h-16 text-primary-foreground/80 group-hover:scale-110 transition-transform duration-300" />
+                {project.image ? (
+                  <img 
+                    src={project.image} 
+                    alt={project.title} 
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                ) : project.icon && (
+                  <project.icon className="w-16 h-16 text-primary-foreground/80 group-hover:scale-110 transition-transform duration-300" />
+                )}
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent)]" />
               </div>
               
