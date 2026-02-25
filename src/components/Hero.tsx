@@ -40,7 +40,7 @@ const MeteorField = () => {
       x: Math.random() * canvas.width * 1.5,
       y: -Math.random() * canvas.height * 0.5,
       length: Math.random() * 120 + 60,
-      speed: Math.random() * 4 + 2,
+      speed: Math.random() * 1.5 + 0.8,
       opacity: Math.random() * 0.6 + 0.4,
       thickness: Math.random() * 2 + 0.5,
       hue: 200 + Math.random() * 60, // blue to cyan range
