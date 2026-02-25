@@ -9,6 +9,7 @@ import Footer from "@/components/Footer";
 import ChatWidget from "@/components/ChatWidget";
 import ChatButton from "@/components/ChatButton";
 import AnimatedShaderBackground from "@/components/ui/animated-shader-background";
+import MeteorField from "@/components/MeteorField";
 
 const Index = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -16,6 +17,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background relative">
       <AnimatedShaderBackground />
+      <MeteorField />
       <Navbar />
       <Hero onOpenChat={() => setIsChatOpen(true)} />
       <About />
