@@ -7,7 +7,17 @@ interface HeroProps {
   onOpenChat: () => void;
 }
 
-const StarField = () => {
+interface Meteor {
+  x: number;
+  y: number;
+  length: number;
+  speed: number;
+  opacity: number;
+  thickness: number;
+  hue: number;
+}
+
+const MeteorField = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -17,7 +27,7 @@ const StarField = () => {
     if (!ctx) return;
 
     let animId: number;
-    const stars: { x: number; y: number; size: number; speed: number; opacity: number }[] = [];
+    const meteors: Meteor[] = [];
 
     const resize = () => {
       canvas.width = canvas.offsetWidth;
@@ -26,32 +36,62 @@ const StarField = () => {
     resize();
     window.addEventListener('resize', resize);
 
-    // Create stars
-    for (let i = 0; i < 120; i++) {
-      stars.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        size: Math.random() * 2 + 0.5,
-        speed: Math.random() * 0.4 + 0.1,
-        opacity: Math.random() * 0.7 + 0.3,
-      });
+    const spawnMeteor = (): Meteor => ({
+      x: Math.random() * canvas.width * 1.5,
+      y: -Math.random() * canvas.height * 0.5,
+      length: Math.random() * 120 + 60,
+      speed: Math.random() * 4 + 2,
+      opacity: Math.random() * 0.6 + 0.4,
+      thickness: Math.random() * 2 + 0.5,
+      hue: 200 + Math.random() * 60, // blue to cyan range
+    });
+
+    // Initial meteors spread across screen
+    for (let i = 0; i < 25; i++) {
+      const m = spawnMeteor();
+      m.x = Math.random() * canvas.width * 1.5;
+      m.y = Math.random() * canvas.height;
+      meteors.push(m);
     }
 
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      for (const star of stars) {
-        star.y -= star.speed;
-        star.opacity += (Math.random() - 0.5) * 0.02;
-        star.opacity = Math.max(0.2, Math.min(1, star.opacity));
-        if (star.y < -2) {
-          star.y = canvas.height + 2;
-          star.x = Math.random() * canvas.width;
-        }
+
+      for (let i = meteors.length - 1; i >= 0; i--) {
+        const m = meteors[i];
+        // Move diagonally: top-right to bottom-left
+        m.x -= m.speed * 1.2;
+        m.y += m.speed;
+
+        // Draw glowing streak
+        const endX = m.x + m.length * 0.7;
+        const endY = m.y - m.length * 0.6;
+
+        const grad = ctx.createLinearGradient(m.x, m.y, endX, endY);
+        grad.addColorStop(0, `hsla(${m.hue}, 90%, 70%, ${m.opacity})`);
+        grad.addColorStop(0.4, `hsla(${m.hue}, 80%, 55%, ${m.opacity * 0.6})`);
+        grad.addColorStop(1, `hsla(${m.hue}, 70%, 40%, 0)`);
+
         ctx.beginPath();
-        ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255,255,255,${star.opacity})`;
+        ctx.moveTo(m.x, m.y);
+        ctx.lineTo(endX, endY);
+        ctx.strokeStyle = grad;
+        ctx.lineWidth = m.thickness;
+        ctx.lineCap = 'round';
+        ctx.stroke();
+
+        // Glow effect
+        ctx.beginPath();
+        ctx.arc(m.x, m.y, m.thickness * 2, 0, Math.PI * 2);
+        ctx.fillStyle = `hsla(${m.hue}, 100%, 80%, ${m.opacity * 0.5})`;
         ctx.fill();
+
+        // Respawn if off-screen
+        if (m.x < -m.length || m.y > canvas.height + m.length) {
+          meteors[i] = spawnMeteor();
+        }
       }
+
       animId = requestAnimationFrame(animate);
     };
     animate();
@@ -74,7 +114,7 @@ const Hero = ({ onOpenChat }: HeroProps) => {
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Moving stars */}
-      <StarField />
+      <MeteorField />
       {/* Background gradient orbs */}
       <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-float" />
       <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '-3s' }} />
