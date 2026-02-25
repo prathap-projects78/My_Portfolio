@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
+import { Infinity, Rocket, Shield, Brain, Play, ChevronDown } from 'lucide-react';
 
 const AnimatedShaderBackground = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -81,7 +82,7 @@ const AnimatedShaderBackground = () => {
           }
 
           o = tanh(pow(o / 100.0, vec4(1.6)));
-          gl_FragColor = o * 0.4;
+          gl_FragColor = o * 1.5;
         }
       `
     });
