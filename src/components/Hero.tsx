@@ -21,11 +21,11 @@ const Hero = ({ onOpenChat }: HeroProps) => {
             <div className="absolute -inset-4 bg-gradient-to-r from-primary via-accent to-primary rounded-2xl blur-2xl opacity-40 group-hover:opacity-60 transition-opacity duration-500 animate-pulse" />
             <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-xl opacity-70 blur-sm" />
             <div className="relative w-64 h-80 lg:w-72 lg:h-96 rounded-xl overflow-hidden border-2 border-primary/40 shadow-[0_0_40px_rgba(139,92,246,0.3)] animate-float">
-              <img 
-                src={prathapPhoto} 
-                alt="Prathap - Software Developer" 
-                className="w-full h-full object-cover"
-              />
+              <img
+                src={prathapPhoto}
+                alt="Prathap - Software Developer"
+                className="w-full h-full object-cover" />
+
             </div>
           </div>
           
@@ -36,7 +36,7 @@ const Hero = ({ onOpenChat }: HeroProps) => {
             </div>
             
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-4 animate-slide-up">
-              <span className="gradient-text">Prathap T</span>
+              <span className="gradient-text font-serif">Prathap T</span>
             </h1>
             
             <p className="text-xl md:text-2xl text-muted-foreground mb-6 animate-slide-up" style={{ animationDelay: '0.1s' }}>
@@ -60,8 +60,8 @@ const Hero = ({ onOpenChat }: HeroProps) => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default Hero;
