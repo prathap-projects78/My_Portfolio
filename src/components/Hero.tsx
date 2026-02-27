@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MessageCircle } from "lucide-react";
 import prathapPhoto from "@/assets/prathap-photo.png";
+import HeroText from "@/components/ui/hero-shutter-text";
 
 interface HeroProps {
   onOpenChat: () => void;
@@ -35,9 +36,9 @@ const Hero = ({ onOpenChat }: HeroProps) => {
               <span className="text-sm font-medium text-primary">Available for opportunities</span>
             </div>
             
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-4 animate-slide-up">
-              <span className="gradient-text font-serif">Prathap T</span>
-            </h1>
+            <div className="mb-4 animate-slide-up">
+              <HeroText text="PRATHAP T" className="!justify-center lg:!justify-start" autoReplay replayInterval={10000} />
+            </div>
             
             <p className="text-xl md:text-2xl text-muted-foreground mb-6 animate-slide-up" style={{ animationDelay: '0.1s' }}>
               CSE Student • Web Developer • AI Enthusiast
