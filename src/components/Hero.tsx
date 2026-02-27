@@ -37,7 +37,7 @@ const Hero = ({ onOpenChat }: HeroProps) => {
             </div>
             
             <div className="mb-4 animate-slide-up">
-              <HeroText text="PRATHAP T" className="!justify-center lg:!justify-start" autoReplay replayInterval={10000} />
+              <HeroText text="PRATHAP T" className="!justify-center lg:!justify-start" autoReplay replayInterval={8000} />
             </div>
             
             <p className="text-xl md:text-2xl text-muted-foreground mb-6 animate-slide-up" style={{ animationDelay: '0.1s' }}>
