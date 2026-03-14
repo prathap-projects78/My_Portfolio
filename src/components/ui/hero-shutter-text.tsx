@@ -57,7 +57,7 @@ export default function HeroText({
             >
               {/* Base character */}
               <motion.span
-                className="inline-block text-[10vw] md:text-[8vw] font-black tracking-[-0.04em] leading-none"
+                className="inline-block text-[7vw] md:text-[5vw] font-black tracking-[-0.04em] leading-none"
                 style={{ color: "hsl(var(--foreground))" }}
                 initial={{ opacity: 0, scale: 1.2 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -72,7 +72,7 @@ export default function HeroText({
 
               {/* Top shutter slice */}
               <motion.span
-                className="absolute inset-0 inline-block text-[10vw] md:text-[8vw] font-black tracking-[-0.04em] leading-none overflow-hidden"
+                className="absolute inset-0 inline-block text-[7vw] md:text-[5vw] font-black tracking-[-0.04em] leading-none overflow-hidden"
                 style={{
                   clipPath: "inset(0 0 70% 0)",
                   color: "hsl(var(--primary))",
@@ -91,7 +91,7 @@ export default function HeroText({
 
               {/* Middle shutter slice */}
               <motion.span
-                className="absolute inset-0 inline-block text-[10vw] md:text-[8vw] font-black tracking-[-0.04em] leading-none overflow-hidden"
+                className="absolute inset-0 inline-block text-[7vw] md:text-[5vw] font-black tracking-[-0.04em] leading-none overflow-hidden"
                 style={{
                   clipPath: "inset(30% 0 30% 0)",
                   color: "hsl(var(--accent))",
@@ -110,7 +110,7 @@ export default function HeroText({
 
               {/* Bottom shutter slice */}
               <motion.span
-                className="absolute inset-0 inline-block text-[10vw] md:text-[8vw] font-black tracking-[-0.04em] leading-none overflow-hidden"
+                className="absolute inset-0 inline-block text-[7vw] md:text-[5vw] font-black tracking-[-0.04em] leading-none overflow-hidden"
                 style={{
                   clipPath: "inset(70% 0 0 0)",
                   color: "hsl(var(--primary))",
@@ -129,7 +129,7 @@ export default function HeroText({
 
               {/* Glitch flash */}
               <motion.span
-                className="absolute inset-0 inline-block text-[10vw] md:text-[8vw] font-black tracking-[-0.04em] leading-none overflow-hidden"
+                className="absolute inset-0 inline-block text-[7vw] md:text-[5vw] font-black tracking-[-0.04em] leading-none overflow-hidden"
                 style={{
                   clipPath: "inset(45% 0 45% 0)",
                   color: "hsl(var(--accent))",
