@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight, MessageCircle, Download } from "lucide-react";
 import prathapPhoto from "@/assets/prathap-photo.png";
 import HeroText from "@/components/ui/hero-shutter-text";
 
