@@ -57,7 +57,7 @@ export default function HeroText({
             >
               {/* Base character */}
               <motion.span
-                className="inline-block text-[10vw] md:text-[8vw] font-black tracking-[-0.04em] leading-none"
+                className="inline-block text-[7vw] md:text-[5vw] font-black tracking-[-0.04em] leading-none"
                 style={{ color: "hsl(var(--foreground))" }}
                 initial={{ opacity: 0, scale: 1.2 }}
                 animate={{ opacity: 1, scale: 1 }}
