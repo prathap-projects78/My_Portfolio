@@ -48,10 +48,15 @@ const Hero = ({ onOpenChat }: HeroProps) => {
               AI + Web Aspiring software engineer interested in full-stack development and AI-driven applications. I enjoy turning ideas into practical solutions using modern technologies and continuous learning.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-slide-up" style={{ animationDelay: '0.3s' }}>
+            <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center lg:justify-start animate-slide-up" style={{ animationDelay: '0.3s' }}>
               <Button variant="hero" size="xl" asChild>
                 <a href="#projects">
                   View Projects <ArrowRight className="ml-2" />
+                </a>
+              </Button>
+              <Button variant="hero" size="xl" asChild>
+                <a href="/Prathap_Resume.pdf" download="Prathap_Resume.pdf">
+                  <Download className="mr-2" /> Download Resume
                 </a>
               </Button>
               <Button variant="heroOutline" size="xl" onClick={onOpenChat}>
