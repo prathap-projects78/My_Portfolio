@@ -91,7 +91,7 @@ export default function HeroText({
 
               {/* Middle shutter slice */}
               <motion.span
-                className="absolute inset-0 inline-block text-[7vw] md:text-[5vw] font-black tracking-[-0.04em] leading-none overflow-hidden"
+                className="absolute inset-0 inline-block text-[8vw] md:text-[6vw] font-black tracking-[-0.04em] leading-none overflow-hidden"
                 style={{
                   clipPath: "inset(30% 0 30% 0)",
                   color: "hsl(var(--accent))",
