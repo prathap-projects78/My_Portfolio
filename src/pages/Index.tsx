@@ -23,6 +23,7 @@ const Index = () => {
       <Hero onOpenChat={() => setIsChatOpen(true)} />
       <About />
       <Skills />
+      <Education />
       <Projects />
       <Contact />
       <Footer />
